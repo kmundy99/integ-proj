@@ -1,0 +1,11 @@
+	<h2>Integrations</h2>
+	<ul class="integ">
+		<li *ngFor= "let integ of integrations"
+		[class.selected]="integration === selectedIntegration"
+		(click)="onSelect(integ)">
+		<span class="badge"> {{integ.id}}</span>{{integ.name}}
+		</li>
+	</ul>
+	<div *ngIf="selectedIntegration">
+		<button (click)="gotoDetail()">View Details</button>
+	</div>
