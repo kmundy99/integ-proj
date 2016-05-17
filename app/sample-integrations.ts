@@ -10,7 +10,7 @@ export var INTEGRATIONS: Integration[] = [
 		 "name": "Read Excel"},
 		 {"id": 2,
 		 "number": 2,
-		 "name": "Lookup"}
+		 "name": "Lookup"},
 		 {"id": 3,
 		 "number": 3,
 		 "name": "Write Excel"}
@@ -25,7 +25,7 @@ export var INTEGRATIONS: Integration[] = [
 		 "name": "Read Excel"},
 		 {"id": 2,
 		 "number": 2,
-		 "name": "Lookup"}
+		 "name": "Lookup"},
 		 {"id": 3,
 		 "number": 3,
 		 "name": "Write Excel"}
