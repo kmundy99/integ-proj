@@ -22,13 +22,13 @@ export var INTEGRATIONS: Integration[] = [
 	"steps": [
 		{"id": 1,
 		 "number": 1,
-		 "name": "Read Excel"},
+		 "name": "Read Excel 2"},
 		 {"id": 2,
 		 "number": 2,
-		 "name": "Lookup"},
+		 "name": "Lookup 2"},
 		 {"id": 3,
 		 "number": 3,
-		 "name": "Write Excel"}
+		 "name": "Write Excel 2"}
 		]
 	}
 ];
