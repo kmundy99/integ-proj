@@ -6,5 +6,10 @@ export class Integration {
 	steps: [
 		{id: number,
 		 number: number,
-		 name: string}];
+		 name: string,
+		 data: [
+				{inputs: string;
+				 restApi: string;
+				 excel: string;
+				 outputs: string}];
 }

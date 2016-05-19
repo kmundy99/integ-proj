@@ -8,13 +8,31 @@ export var INTEGRATIONS: Integration[] = [
 	"steps": [
 		{"id": 1,
 		 "number": 1,
-		 "name": "Read Excel"},
+		 "name": "Read Excel",
+		 "data": [{
+					"inputs": "Input Data",
+					"restApi": "Rest Api",
+					"excel": "Excel",
+					"outputs": "output data"
+					}]},
 		 {"id": 2,
 		 "number": 2,
-		 "name": "Lookup"},
+		 "name": "Lookup",
+		 		 "data": [{
+					"inputs": "Input Data",
+					"restApi": "Rest Api",
+					"excel": "Excel",
+					"outputs": "output data"
+					}]},
 		 {"id": 3,
 		 "number": 3,
-		 "name": "Write Excel"}
+		 "name": "Write Excel",
+		 		 "data": [{
+					"inputs": "Input Data",
+					"restApi": "Rest Api",
+					"excel": "Excel",
+					"outputs": "output data"
+					}]}
 		]
 	},
 	{
