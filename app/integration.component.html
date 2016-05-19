@@ -19,7 +19,7 @@
 	<div *ngIf="selectedStep">
 	<ul class="details">
 		<li *ngFor="let data of selectedStep.data">
-		<span class="badge"> {{data.inputs}}</span>{{data.restApi}}{{"  "+data.excel}}{{"  "+data.outputs}}
+		<span class="badge"> {{data.name}}</span>{{data.inputs}}{{"  "+data.readWrite}}{{"  "+data.lookups}}{{"  "+data.restApi}}{{"  "+data.excel}}{{"  "+data.outputs}}
 		</li>
 	</ul>
 	</div>

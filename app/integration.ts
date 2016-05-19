@@ -8,7 +8,11 @@ export class Integration {
 		 number: number,
 		 name: string,
 		 data: [
-				{inputs: string;
+				{name: string;
+				 inputs: string;
+				 readWrite: string;
+				 type: string;
+				 lookup: string;
 				 restApi: string;
 				 excel: string;
 				 outputs: string}];

@@ -10,20 +10,33 @@ export var INTEGRATIONS: Integration[] = [
 		 "number": 1,
 		 "name": "Read Excel",
 		 "data": [{
+					"name": "Read Data",
 					"inputs": "Input Data",
-					"restApi": "Rest Api",
-					"excel": "Excel",
+					"readWrite":"Read",
+					"type":"Excel",
+					"excel": "Excel connect info",
 					"outputs": "output data"
 					}]},
 		 {"id": 2,
 		 "number": 2,
 		 "name": "Lookup",
 		 		 "data": [{
+				    "name": "Transform 1"
 					"inputs": "Input Data",
-					"restApi": "Rest Api",
-					"excel": "Excel",
+					"readWrite": "Both",
+					"type": "Lookup",
+					"lookup": "Lookup Name A",
 					"outputs": "output data"
-					}]},
+					},
+					{
+				    "name": "Transform 2"
+					"inputs": "Input Data",
+					"readWrite": "Both",
+					"type": "Lookup",
+					"lookup": "Lookup Name B",
+					"outputs": "output data"
+					}
+					]},
 		 {"id": 3,
 		 "number": 3,
 		 "name": "Write Excel",
