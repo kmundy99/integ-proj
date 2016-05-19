@@ -4,6 +4,7 @@ export var INTEGRATIONS: Integration[] = [
 	{
 	"id": 1,
 	"name": "Fusion HCM to Taleo",
+	"limitTo": 3,
 	"steps": [
 		{"id": 1,
 		 "number": 1,
@@ -19,6 +20,7 @@ export var INTEGRATIONS: Integration[] = [
 	{
 	"id": 2,
 	"name": "Fusion HCM to Learn",
+	"limitTo": 2,
 	"steps": [
 		{"id": 1,
 		 "number": 1,

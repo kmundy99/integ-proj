@@ -7,11 +7,19 @@
 		</li>
 	</ul>
 	<div *ngIf="selectedIntegration">
-	<ul class="integ ">
+	<ul class="integ">
 		<li *ngFor= "let step of selectedIntegration.steps"
+		[class.selected]="step === selectedStep"
 		class="step"
-		(click)="onSelect(integ)">
+		(click)="onSelects(step)">
 		<span class="badge"> {{step.id}}</span>{{step.name}}
+		</li>
+	</ul>
+	</div>
+	<div *ngIf="selectedStep">
+	<ul class="details">
+		<li>
+		<span class="badge"> Details</span>More Details
 		</li>
 	</ul>
 	</div>

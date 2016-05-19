@@ -8,7 +8,7 @@ h2 {
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
-  width: 45em;
+  width: 80em;
 }
  li {
   cursor: pointer;
@@ -62,4 +62,14 @@ button:hover {
 .step {
 	width: 10em;
 	float: left;
+}
+
+.details {
+	background-color: #eee;
+	border: solid black;
+	position: absolute;
+	margin-top: 80px;
+	width: 30em;
+	height: 80em;
+	list-style-type: none;
 }
