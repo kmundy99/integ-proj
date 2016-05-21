@@ -4,9 +4,9 @@ export class Integration {
 	name: string;
 	limitTo: number;
 	steps: [
-		{id: number,
-		 number: number,
-		 name: string,
+		{id: number;
+		 number: number;
+		 name: string;
 		 data: [
 				{name: string;
 				 inputs: string;
@@ -16,4 +16,5 @@ export class Integration {
 				 restApi: string;
 				 excel: string;
 				 outputs: string}];
+}];
 }

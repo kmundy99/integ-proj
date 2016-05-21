@@ -14,35 +14,45 @@ export var INTEGRATIONS: Integration[] = [
 					"inputs": "Input Data",
 					"readWrite":"Read",
 					"type":"Excel",
+					"lookup":"",
+					"restApi": "",
 					"excel": "Excel connect info",
 					"outputs": "output data"
 					}]},
 		 {"id": 2,
 		 "number": 2,
 		 "name": "Lookup",
-		 		 "data": [{
-				    "name": "Transform 1"
+		 "data": [{
+				    "name": "Transform 1",
 					"inputs": "Input Data",
 					"readWrite": "Both",
 					"type": "Lookup",
 					"lookup": "Lookup Name A",
+					"restApi": "",
+					"excel": "",
 					"outputs": "output data"
 					},
 					{
-				    "name": "Transform 2"
+				    "name": "Transform 2",
 					"inputs": "Input Data",
 					"readWrite": "Both",
 					"type": "Lookup",
 					"lookup": "Lookup Name B",
+					"restApi": "",
+					"excel": "",
 					"outputs": "output data"
 					}
 					]},
 		 {"id": 3,
 		 "number": 3,
 		 "name": "Write Excel",
-		 		 "data": [{
+		 "data": [{
+				    "name": "Write Excel",
 					"inputs": "Input Data",
-					"restApi": "Rest Api",
+					"readWrite": "Write",
+					"type": "",
+					"lookup": "",					
+					"restApi": "",
 					"excel": "Excel",
 					"outputs": "output data"
 					}]}
@@ -55,17 +65,44 @@ export var INTEGRATIONS: Integration[] = [
 	"steps": [
 		{"id": 1,
 		 "number": 1,
-		 "name": "Read Excel 2"},
+		 "name": "Read Excel 2",
+		 "data":[{	"name": "",
+					"inputs": "",
+					"readWrite": "",
+					"type": "",
+					"lookup": "",					
+					"restApi": "",
+					"excel": "",
+					"outputs": ""
+}]},
 		 {"id": 2,
 		 "number": 2,
-		 "name": "Lookup 2"},
+		 "name": "Lookup 2",
+		 "data":[{
+					"name": "",
+					"inputs": "",
+					"readWrite": "",
+					"type": "",
+					"lookup": "",					
+					"restApi": "",
+					"excel": "",
+					"outputs": ""
+		 }]},
 		 {"id": 3,
 		 "number": 3,
-		 "name": "Write Excel 2"}
+		 "name": "Write Excel 2",
+		 "data":[{"name": "",
+					"inputs": "",
+					"readWrite": "",
+					"type": "",
+					"lookup": "",					
+					"restApi": "",
+					"excel": "",
+					"outputs": ""}]}
 		]
 	}
 ];
 
-/* */
+
 
 

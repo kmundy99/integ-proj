@@ -8,18 +8,23 @@
 	</ul>
 	<div *ngIf="selectedIntegration">
 	<ul class="integ">
-		<li *ngFor= "let step of selectedIntegration.steps"
+		<li *ngFor= "let step of selectedIntegration.steps" 
 		[class.selected]="step === selectedStep"
-		class="step"
-		(click)="onSelects(step)">
+		class="step" 
+		(click)="onSelects(step)"
+		>
 		<span class="badge"> {{step.id}}</span>{{step.name}}
 		</li>
 	</ul>
+
 	</div>
 	<div *ngIf="selectedStep">
 	<ul class="details">
-		<li *ngFor="let data of selectedStep.data">
+		<li *ngFor="let data of selectedStep.data" >
 		<span class="badge"> {{data.name}}</span>{{data.inputs}}{{"  "+data.readWrite}}{{"  "+data.lookups}}{{"  "+data.restApi}}{{"  "+data.excel}}{{"  "+data.outputs}}
 		</li>
 	</ul>
 	</div>
+	
+	
+

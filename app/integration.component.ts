@@ -11,7 +11,7 @@ import { IntegrationService } from './integration.service';
 export class IntegrationComponent implements OnInit {
 integrations: Integration[];
 selectedIntegration: Integration;
-selectedStep: Integration.steps;
+selectedStep: Integration;
 
 constructor(private integrationService: IntegrationService) {
 	}
@@ -26,11 +26,13 @@ constructor(private integrationService: IntegrationService) {
 	
 	onSelect(integ: Integration) {
 	this.selectedIntegration = integ;
+	console.log(typeof this.selectedIntegration.steps);
 	}
 	
-	onSelects(step: Integration.steps) {
+	onSelects(step: Integration) {
 	this.selectedStep= step;
 	}
+
 	
 	gotoDetail() {
 	
