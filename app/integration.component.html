@@ -21,10 +21,37 @@
 	<div *ngIf="selectedStep">
 	<ul class="details">
 		<li *ngFor="let data of selectedStep.data" >
-		<span class="badge"> {{data.name}}</span>{{data.inputs}}{{"  "+data.readWrite}}{{"  "+data.lookups}}{{"  "+data.restApi}}{{"  "+data.excel}}{{"  "+data.outputs}}
+			<span class="badge"> {{data.name}}</span>{{data.inputs}}{{"  "+data.readWrite}}{{"  "+data.lookups}}{{"  "+data.restApi}}{{"  "+data.excel}}{{"  "+data.outputs}}
+				<div class="container">
+					<form>
+					  <div class="data-group">
+						<label>Name</label>
+						<input type="text" class="form-control" required [(ngModel)]="data.name">
+					  </div>
+					  <div class="data-group">
+						<label>Inputs</label>
+						<input type="text" class="form-control" [(ngModel)]="data.inputs">
+					  </div>
+					  <div class="data-group">
+							<label>Type</label>
+							<select class="form-control" required [(ngModel)]="data.type">
+							<option *ngFor="let t of type" [value]="t">{{t}}</option>
+							</select>
+					   </div>
+					   <div class="data-group">
+							<label>Read Write</label>
+							<select class="form-control" required [(ngModel)]="data.readWrite">
+							<option *ngFor="let r of readWrite" [value]="r">{{r}}</option>
+							</select>
+					   </div>
+					  <button type="submit" class="btn btn-default">Submit</button>
+					</form>
+				</div>
 		</li>
 	</ul>
 	</div>
+	
+
 	
 	
 

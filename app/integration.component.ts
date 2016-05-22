@@ -5,7 +5,7 @@ import { IntegrationService } from './integration.service';
 @Component({
     selector: 'integration',
     templateUrl: 'app/integration.component.html',
-	styleUrls:  ['app/integration.component.css'],
+	styleUrls:  ['app/integration.component.css']
 })
 
 export class IntegrationComponent implements OnInit {
@@ -14,6 +14,8 @@ selectedIntegration: Integration;
 selectedStep: Integration;
 
 constructor(private integrationService: IntegrationService) {
+	var type = ['Lookup', 'Excel', 'Rest Api'];
+	var readwrite = ['Read', 'Write', 'Both'];
 	}
 
 	getIntegrations() {
