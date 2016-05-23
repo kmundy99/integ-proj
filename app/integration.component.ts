@@ -12,6 +12,9 @@ export class IntegrationComponent implements OnInit {
 integrations: Integration[];
 selectedIntegration: Integration;
 selectedStep: Integration;
+readWrite = ['Read', 'Write', 'Both'];
+type = ['Lookup', 'Excel', 'Rest Api'];
+
 
 constructor(private integrationService: IntegrationService) {
 
@@ -23,8 +26,6 @@ constructor(private integrationService: IntegrationService) {
 	
 	ngOnInit() {
 	this.getIntegrations();
-	var type = ['Lookup', 'Excel', 'Rest Api'];
-	var readwrite = ['Read', 'Write', 'Both'];
 	}
 	
 	onSelect(integ: Integration) {
