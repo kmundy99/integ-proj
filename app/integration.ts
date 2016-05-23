@@ -5,13 +5,13 @@ export class Integration {
 	limitTo: number;
 	steps: [
 		{id: number;
-		 number: number;
 		 name: string;
+		 number: number;
 		 data: [
 				{name: string;
-				 inputs: string;
 				 readWrite: string;
 				 type: string;
+				 inputs: [{sourceFieldId: number; overrideLabel: string;}];
 				 lookup: string;
 				 restApi: string;
 				 excel: string;

@@ -11,7 +11,7 @@ export var INTEGRATIONS: Integration[] = [
 		 "name": "Read Excel",
 		 "data": [{
 					"name": "Read Data",
-					"inputs": "Input Data",
+					"inputs": [{sourceStepId: "", sourceFieldId: "", overrideLabel: ""}],
 					"readWrite":"Read",
 					"type":"Excel",
 					"lookup":"",
@@ -24,7 +24,7 @@ export var INTEGRATIONS: Integration[] = [
 		 "name": "Lookup",
 		 "data": [{
 				    "name": "Transform 1",
-					"inputs": "Input Data",
+					"inputs": [{sourceStepId: "", sourceFieldId: "", overrideLabel: ""}],
 					"readWrite": "Both",
 					"type": "Lookup",
 					"lookup": "Lookup Name A",
@@ -34,7 +34,7 @@ export var INTEGRATIONS: Integration[] = [
 					},
 					{
 				    "name": "Transform 2",
-					"inputs": "Input Data",
+					"inputs": [{sourceStepId: "", sourceFieldId: "", overrideLabel: ""}],
 					"readWrite": "Both",
 					"type": "Lookup",
 					"lookup": "Lookup Name B",
@@ -48,7 +48,7 @@ export var INTEGRATIONS: Integration[] = [
 		 "name": "Write Excel",
 		 "data": [{
 				    "name": "Write Excel",
-					"inputs": "Input Data",
+					"inputs": [{sourceStepId: "", sourceFieldId: "", overrideLabel: ""}],
 					"readWrite": "Write",
 					"type": "",
 					"lookup": "",					
@@ -67,7 +67,7 @@ export var INTEGRATIONS: Integration[] = [
 		 "number": 1,
 		 "name": "Read Excel 2",
 		 "data":[{	"name": "",
-					"inputs": "",
+					"inputs": [{sourceStepId: "", sourceFieldId: "", overrideLabel: ""}],
 					"readWrite": "",
 					"type": "",
 					"lookup": "",					
@@ -80,7 +80,7 @@ export var INTEGRATIONS: Integration[] = [
 		 "name": "Lookup 2",
 		 "data":[{
 					"name": "",
-					"inputs": "",
+					"inputs":[{sourceStepId: "", sourceFieldId: "", overrideLabel: ""}],
 					"readWrite": "",
 					"type": "",
 					"lookup": "",					
@@ -92,7 +92,7 @@ export var INTEGRATIONS: Integration[] = [
 		 "number": 3,
 		 "name": "Write Excel 2",
 		 "data":[{"name": "",
-					"inputs": "",
+					"inputs": [{sourceStepId: "", sourceFieldId: "", overrideLabel: ""}],
 					"readWrite": "",
 					"type": "",
 					"lookup": "",					

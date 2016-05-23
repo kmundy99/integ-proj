@@ -29,10 +29,6 @@
 						<input type="text" class="form-control" required [(ngModel)]="data.name">
 					  </div>
 					  <div class="data-group">
-						<label>Inputs</label>
-						<input type="text" class="form-control" [(ngModel)]="data.inputs">
-					  </div>
-					  <div class="data-group">
 							<label>Read Write</label>
 							<select class="form-control" required [(ngModel)]="data.readWrite">
 							<option *ngFor="let rw of readWrite" [value]="rw">{{rw}}</option>
@@ -44,6 +40,15 @@
 							<option *ngFor="let t of type" [value]="t">{{t}}</option>
 							</select>
 					   </div>
+					  <div class="data-group">
+						<ul class="inputs">
+							<li *ngFor="let input of data.inputs" >
+								<input type="text" class="form-control element" [(ngModel)]="input.sourceStepId">	
+								<input type="text" class="form-control element" [(ngModel)]="input.sourceFieldId">
+								<input type="text" class="form-control element" [(ngModel)]="input.overrideLabel">
+							</li>
+						</ul>
+					  </div>
 
 					  <button type="submit" class="btn btn-default">Submit</button>
 					</form>
