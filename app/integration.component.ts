@@ -14,8 +14,7 @@ selectedIntegration: Integration;
 selectedStep: Integration;
 
 constructor(private integrationService: IntegrationService) {
-	var type = ['Lookup', 'Excel', 'Rest Api'];
-	var readwrite = ['Read', 'Write', 'Both'];
+
 	}
 
 	getIntegrations() {
@@ -24,6 +23,8 @@ constructor(private integrationService: IntegrationService) {
 	
 	ngOnInit() {
 	this.getIntegrations();
+	var type = ['Lookup', 'Excel', 'Rest Api'];
+	var readwrite = ['Read', 'Write', 'Both'];
 	}
 	
 	onSelect(integ: Integration) {

@@ -6,11 +6,32 @@ h2 {
 
 .integ {
   margin: 0 0 2em 0;
-  list-style-type: none;
   padding: 0;
+    list-style-type: none;
   width: 80em;
 }
- li {
+
+.details {
+	background-color: #eee;
+	border: solid black;
+	position: absolute;
+	margin-top: 5em;
+	width: 30em;
+	height: 80em;
+	list-style-type: none;
+}
+
+ li{
+  cursor: pointer;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+
+ li.main{
   cursor: pointer;
   position: relative;
   left: 0;
@@ -20,6 +41,8 @@ h2 {
   height: 1.6em;
   border-radius: 4px;
 }
+
+
  li:hover {
   color: #607D8B;
   background-color: #DDD;
@@ -64,12 +87,9 @@ button:hover {
 	float: left;
 }
 
-.details {
-	background-color: #eee;
-	border: solid black;
-	position: absolute;
-	margin-top: 80px;
-	width: 30em;
-	height: 80em;
-	list-style-type: none;
+
+
+.container {
+		width: 28em;
+		float: left;
 }
