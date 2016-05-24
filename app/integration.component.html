@@ -40,12 +40,35 @@
 							<option *ngFor="let t of type" [value]="t">{{t}}</option>
 							</select>
 					   </div>
+					   	<div class="data-group" *ngIf="data.type=='Lookup'">
+							<label>Lookups</label>
+							<select class="form-control" required [(ngModel)]="data.lookup">
+							<option *ngFor="let look of lookup" [value]="look">{{look}}</option>
+							</select>
+					   </div>
+					   
 					  <div class="data-group">
 						<ul class="inputs">
+						
+							<label>Source Step Id</label> 
+							<label>Source Field Id</label>
+							<label>Override Label</label> 
 							<li *ngFor="let input of data.inputs" >
 								<input type="text" class="form-control element" [(ngModel)]="input.sourceStepId">	
 								<input type="text" class="form-control element" [(ngModel)]="input.sourceFieldId">
 								<input type="text" class="form-control element" [(ngModel)]="input.overrideLabel">
+							</li>
+						</ul>
+					  </div>
+					  
+					  	<div class="data-group">
+						<ul class="inputs">
+						
+							<label>Field Id</label> 
+							<label>Field Label</label>
+							<li *ngFor="let output of data.outputs" >
+								<input type="text" class="form-control element" [(ngModel)]="output.fieldId">
+								<input type="text" class="form-control element" [(ngModel)]="output.fieldLabel">
 							</li>
 						</ul>
 					  </div>

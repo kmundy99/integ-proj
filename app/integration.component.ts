@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { Integration} from './integration';
 import { IntegrationService } from './integration.service';
+import {NgIf} from '@angular/common';
 
 @Component({
     selector: 'integration',
@@ -30,7 +31,7 @@ constructor(private integrationService: IntegrationService) {
 	
 	onSelect(integ: Integration) {
 	this.selectedIntegration = integ;
-	console.log(typeof this.selectedIntegration.steps);
+	console.log(this.selectedIntegration.steps);
 	}
 	
 	onSelects(step: Integration) {

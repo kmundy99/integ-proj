@@ -11,36 +11,36 @@ export var INTEGRATIONS: Integration[] = [
 		 "name": "Read Excel",
 		 "data": [{
 					"name": "Read Data",
-					"inputs": [{sourceStepId: "", sourceFieldId: "", overrideLabel: ""}],
+					"inputs": [{sourceStepId: 0, sourceFieldId: 0, overrideLabel: ""}],
 					"readWrite":"Read",
 					"type":"Excel",
 					"lookup":"",
 					"restApi": "",
 					"excel": "Excel connect info",
-					"outputs": "output data"
+					"outputs": [{"fieldId": 0, "fieldLabel": ""}]
 					}]},
 		 {"id": 2,
 		 "number": 2,
 		 "name": "Lookup",
 		 "data": [{
 				    "name": "Transform 1",
-					"inputs": [{sourceStepId: "", sourceFieldId: "", overrideLabel: ""}],
+					"inputs": [{sourceStepId: 0, sourceFieldId: 0, overrideLabel: ""}],
 					"readWrite": "Both",
 					"type": "Lookup",
 					"lookup": "Lookup Name A",
 					"restApi": "",
 					"excel": "",
-					"outputs": "output data"
+					"outputs": [{"fieldId": 0, "fieldLabel": ""}]
 					},
 					{
 				    "name": "Transform 2",
-					"inputs": [{sourceStepId: "", sourceFieldId: "", overrideLabel: ""}],
+					"inputs": [{sourceStepId: 0, sourceFieldId: 0, overrideLabel: ""}],
 					"readWrite": "Both",
 					"type": "Lookup",
 					"lookup": "Lookup Name B",
 					"restApi": "",
 					"excel": "",
-					"outputs": "output data"
+					"outputs": [{"fieldId": 0, "fieldLabel": ""}]
 					}
 					]},
 		 {"id": 3,
@@ -48,13 +48,13 @@ export var INTEGRATIONS: Integration[] = [
 		 "name": "Write Excel",
 		 "data": [{
 				    "name": "Write Excel",
-					"inputs": [{sourceStepId: "", sourceFieldId: "", overrideLabel: ""}],
+					"inputs": [{sourceStepId: 0, sourceFieldId: 0, overrideLabel: ""}],
 					"readWrite": "Write",
 					"type": "",
 					"lookup": "",					
 					"restApi": "",
 					"excel": "Excel",
-					"outputs": "output data"
+					"outputs": [{"fieldId": 0, "fieldLabel": ""}]
 					}]}
 		]
 	},
@@ -67,40 +67,42 @@ export var INTEGRATIONS: Integration[] = [
 		 "number": 1,
 		 "name": "Read Excel 2",
 		 "data":[{	"name": "",
-					"inputs": [{sourceStepId: "", sourceFieldId: "", overrideLabel: ""}],
+					"inputs": [{sourceStepId: 0, sourceFieldId: 0, overrideLabel: ""}],
 					"readWrite": "",
 					"type": "",
 					"lookup": "",					
 					"restApi": "",
 					"excel": "",
-					"outputs": ""
+					"outputs": [{"fieldId": 0, "fieldLabel": ""}]
 }]},
 		 {"id": 2,
 		 "number": 2,
 		 "name": "Lookup 2",
-		 "data":[{
+		 "data":
+		 [{
 					"name": "",
-					"inputs":[{sourceStepId: "", sourceFieldId: "", overrideLabel: ""}],
+					"inputs":[{sourceStepId: 0, sourceFieldId: 0, overrideLabel: ""}],
 					"readWrite": "",
 					"type": "",
 					"lookup": "",					
 					"restApi": "",
 					"excel": "",
-					"outputs": ""
+					"outputs": [{"fieldId": 0, "fieldLabel": ""}]
 		 }]},
 		 {"id": 3,
 		 "number": 3,
 		 "name": "Write Excel 2",
 		 "data":[{"name": "",
-					"inputs": [{sourceStepId: "", sourceFieldId: "", overrideLabel: ""}],
+					"inputs": [{sourceStepId: 0, sourceFieldId: 0, overrideLabel: ""}],
 					"readWrite": "",
 					"type": "",
 					"lookup": "",					
 					"restApi": "",
 					"excel": "",
-					"outputs": ""}]}
-		]
-	}
+					"outputs": [{"fieldId": 0, "fieldLabel": ""}]
+					}]
+		}
+		]}
 ];
 
 

@@ -6,8 +6,14 @@ import { IntegrationComponent } from './integration.component';
 @Component({
     selector: 'integration-app',
     template: `
-	<h1>Integration Dashboard</h1>
-     <integration></integration>
+	<header>
+		<nav id="header-nav" class="navbar navbar-default">
+			<div class="container">
+				<h1>Integration Dashboard</h1>
+				<integration></integration>
+			</div>
+		</nav>
+	</header>
 	`,
 	providers: [
     IntegrationService],

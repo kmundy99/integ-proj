@@ -11,10 +11,11 @@ export class Integration {
 				{name: string;
 				 readWrite: string;
 				 type: string;
-				 inputs: [{sourceFieldId: number; overrideLabel: string;}];
+				 inputs: [{sourceStepId: number; sourceFieldId: number; overrideLabel: string;}];
 				 lookup: string;
 				 restApi: string;
 				 excel: string;
-				 outputs: string}];
+				 outputs: [{fieldId: number; fieldLabel: string;}]
+				 }];
 }];
 }
