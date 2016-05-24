@@ -13,8 +13,8 @@ export class Integration {
 				 type: string;
 				 inputs: [{sourceStepId: number; sourceFieldId: number; overrideLabel: string;}];
 				 lookup: string;
-				 restApi: string;
-				 excel: string;
+				 restApi: {name: string; url: string; username: string; password: string;};
+				 excel: {name: string; ipAddress: string; username: string; password: string; dirPath: string; moveToPath: string; fileName: string;};
 				 outputs: [{fieldId: number; fieldLabel: string;}]
 				 }];
 }];

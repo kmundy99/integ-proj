@@ -82,8 +82,12 @@ button:hover {
 
 
 .container {
-		width: 34em;
+		width: 30em;
 		float: left;
+}
+.rcontainer {
+		width: 30em;
+		float: right;
 }
 
 .element {

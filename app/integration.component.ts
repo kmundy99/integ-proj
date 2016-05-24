@@ -15,6 +15,7 @@ selectedIntegration: Integration;
 selectedStep: Integration;
 readWrite = ['Read', 'Write', 'Both'];
 type = ['Lookup', 'Excel', 'Rest Api'];
+lookup = ['State abbrev to state', 'Taleo Prefix to Fusion Prefix', 'Taleo Person Type to Fusion Person Type'];
 
 
 constructor(private integrationService: IntegrationService) {

@@ -73,11 +73,66 @@
 						</ul>
 					  </div>
 
-					  <button type="submit" class="btn btn-default">Submit</button>
+					  <button type="submit" class="btn btn-default">Save</button>
+					</form>
+			</div> 
+			<div  *ngIf="data.type=='Rest Api'" class="rcontainer">
+					<form>
+					  <div class="data-group">
+						<label>Rest API Name</label>
+						<input type="text" class="form-control" required [(ngModel)]="data.restApi.name">
+					  </div>
+					  <div class="data-group">
+						<label>URL</label>
+						<input type="text" class="form-control" required [(ngModel)]="data.restApi.url">
+					  </div>
+					  <div class="data-group">
+						<label>Username</label>
+						<input type="text" class="form-control" required [(ngModel)]="data.restApi.username">
+					  </div>
+					  <div class="data-group">
+						<label>Password</label>
+						<input type="text" class="form-control" required [(ngModel)]="data.restApi.password">
+					  </div>
+					  <button type="submit" class="btn btn-default">Save</button>
 					</form>
 			</div>
-		</li>
-	</ul>
+
+			<div  *ngIf="data.type=='Excel'" class="rcontainer">
+					<form>
+					  <div class="data-group">
+						<label>Excel Name</label>
+						<input type="text" class="form-control" required [(ngModel)]="data.excel.name">
+					  </div>
+					  <div class="data-group">
+						<label>IP Address</label>
+						<input type="text" class="form-control" required [(ngModel)]="data.excel.ipAddress">
+					  </div>
+					  <div class="data-group">
+						<label>Username</label>
+						<input type="text" class="form-control" required [(ngModel)]="data.excel.username">
+					  </div>
+					  <div class="data-group">
+						<label>Password</label>
+						<input type="text" class="form-control" required [(ngModel)]="data.excel.password">
+					  </div>
+					  <div class="data-group">
+						<label>Directory Path</label>
+						<input type="text" class="form-control" required [(ngModel)]="data.excel.dirPath">
+					  </div>
+					  <div class="data-group">
+						<label>Move To Path</label>
+						<input type="text" class="form-control" required [(ngModel)]="data.excel.moveToPath">
+					  </div>
+					  <div class="data-group">
+						<label>File Name</label>
+						<input type="text" class="form-control" required [(ngModel)]="data.excel.fileName">
+					  </div>					  
+					  <button type="submit" class="btn btn-default">Save</button>
+					</form>
+			</div>			
+		</li> 
+	</ul> 
 	</div>
 	
 
