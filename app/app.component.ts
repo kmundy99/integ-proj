@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { Integration} from './integration';
-import { IntegrationService } from './integration.service';
+import { FirebaseService } from './firebase.service';
 import { IntegrationComponent } from './integration.component';
 
 @Component({
@@ -15,8 +15,7 @@ import { IntegrationComponent } from './integration.component';
 		</nav>
 	</header>
 	`,
-	providers: [
-    IntegrationService],
+	providers: [FirebaseService],
     directives: [IntegrationComponent]
 })
 

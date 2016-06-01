@@ -11,7 +11,7 @@ export var INTEGRATIONS: Integration[] = [
 		 "name": "Read Excel",
 		 "data": [{
 					"name": "Read Data",
-					"inputs": [{sourceStepId: 0, sourceFieldId: 0, overrideLabel: ""}],
+					"inputs": [{"sourceStepId": 0, "sourceFieldId": 0, "overrideLabel": ""}],
 					"readWrite":"Read",
 					"type":"Excel",
 					"lookup":"",

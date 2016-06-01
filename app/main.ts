@@ -1,4 +1,12 @@
 import {bootstrap}    from '@angular/platform-browser-dynamic';
 import {AppComponent} from './app.component';
+import { enableProdMode } from '@angular/core';
+import {HTTP_PROVIDERS} from '@angular/http';
+import {FirebaseService} from './firebase.service';
 
-bootstrap(AppComponent);
+/*
+if (environment.production) {
+  enableProdMode();
+}
+*/
+bootstrap(AppComponent, [HTTP_PROVIDERS, FirebaseService]);
