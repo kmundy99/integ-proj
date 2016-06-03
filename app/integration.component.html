@@ -1,19 +1,24 @@
 	<h2>Integrations</h2>
 	<ul class="integ">
-		<li *ngFor= "let integ of integrations" class="main"
-		[class.selected]="integration === selectedIntegration"
-		(click)="onSelect(integ)">
-		<span class="badge"> {{integ.id}}</span>{{integ.name}}
-		</li>
+		<div contenteditable = true>
+			<li *ngFor= "let integ of integrations" class="main"
+			[class.selected]="integration === selectedIntegration"
+			(click)="onSelect(integ)">
+			<span class="badge"> {{integ.id}}</span>{{integ.name}}
+			</li>
+		</div>
+		<button (click) = "addIntegration()">+</button>
 	</ul>
+
+	
 	<div *ngIf="selectedIntegration">
-	<ul class="integ">
+	<ul class="integ" contenteditable = true>
 		<li *ngFor= "let step of selectedIntegration.steps" class="main"
 		[class.selected]="step === selectedStep"
 		class="step" 
 		(click)="onSelects(step)"
 		>
-		<span class="badge"> {{step.id}}</span>{{step.name}}
+		<span class="badge" > {{step.id}}</span>{{step.name}}
 		</li>
 	</ul>
 

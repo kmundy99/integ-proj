@@ -13,7 +13,7 @@ import {FirebaseService} from './firebase.service';
 
 export class IntegrationComponent implements OnInit {
 
-integrations: Integration;
+integrations: Integration[];
 selectedIntegration: Integration;
 selectedStep: Integration;
 readWrite = ['Read', 'Write', 'Both'];
@@ -43,6 +43,9 @@ constructor(private _firebaseService: FirebaseService) {
 	this.selectedStep= step;
 	}
 
+	addIntegration() {
+		this.integrations.push(new Integration(3, "Update Integration Name", 3));
+	}
 	
 	gotoDetail() {
 	

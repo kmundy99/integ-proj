@@ -18,4 +18,25 @@ export class Integration {
 				 outputs: [{fieldId: number; fieldLabel: string;}]
 				 }];
 }];
+
+constructor(id: number, name: string, limitTo: number){
+	this.id = id,
+	this.name=name,
+	this.limitTo = limitTo,
+	this.steps=[
+		{id: 0,
+		 name: "",
+		 number: 0,
+		 data: [
+				{name: "",
+				 readWrite: "",
+				 type: "",
+				 inputs: [{sourceStepId: 0, sourceFieldId: 0, overrideLabel: ""}],
+				 lookup: "",
+				 restApi: {name: "", url: "", username: "", password: ""},
+				 excel: {name: "", ipAddress: "", username: "", password: "", dirPath: "", moveToPath: "", fileName: ""},
+				 outputs: [{fieldId: 0, fieldLabel: ""}]
+				 }]
+}
+]}
 }
