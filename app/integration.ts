@@ -25,10 +25,10 @@ constructor(id: number, name: string, limitTo: number){
 	this.limitTo = limitTo,
 	this.steps=[
 		{id: 0,
-		 name: "",
+		 name: "Update Step",
 		 number: 0,
 		 data: [
-				{name: "",
+				{name: "Update Name",
 				 readWrite: "",
 				 type: "",
 				 inputs: [{sourceStepId: 0, sourceFieldId: 0, overrideLabel: ""}],
@@ -39,4 +39,6 @@ constructor(id: number, name: string, limitTo: number){
 				 }]
 }
 ]}
+
+
 }

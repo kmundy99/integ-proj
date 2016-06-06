@@ -1,4 +1,5 @@
 	<h2>Integrations</h2>
+	<button (click)="saveIntegration()">Save All</button>
 	<ul class="integ">
 		<div contenteditable = true>
 			<li *ngFor= "let integ of integrations" class="main"
@@ -20,6 +21,7 @@
 		>
 		<span class="badge" > {{step.id}}</span>{{step.name}}
 		</li>
+		<button (click) = "addStep()">+</button>
 	</ul>
 
 	</div>

@@ -9,7 +9,7 @@ export class FirebaseService {
 	constructor(private _http: Http) {
 	}
 
-	setIntegration(integ: Integration) {
+	setIntegration(integ: [Integration]) {
 		const body = JSON.stringify(integ);
 		return this._http.put('https://integrations-3a5a9.firebaseio.com/integrations.json', body)
 			.map(response => response.json());
