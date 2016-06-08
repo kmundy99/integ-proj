@@ -19,6 +19,7 @@ export class Integration {
 				 }];
 }];
 
+
 constructor(id: number, name: string, limitTo: number){
 	this.id = id,
 	this.name=name,

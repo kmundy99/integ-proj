@@ -20,6 +20,8 @@ readWrite = ['Read', 'Write', 'Both'];
 type = ['Lookup', 'Excel', 'Rest Api'];
 lookup = ['State abbrev to state', 'Taleo Prefix to Fusion Prefix', 'Taleo Person Type to Fusion Person Type'];
 saveData: string;
+makeIntegrationEditable: string;
+makeStepEditable: string;
 	
 constructor(private _firebaseService: FirebaseService) {
     this._firebaseService.getIntegration()
@@ -31,13 +33,14 @@ constructor(private _firebaseService: FirebaseService) {
 		console.log(this.integrations);
   }
 
-	saveIntegration() {
+	saveAll() {
 	this._firebaseService.setIntegration(this.integrations)
 		.subscribe(
 		data => this.saveData = data,
 		error => alert(error),
 		() => console.log("Finished")
 		);
+	this.makeIntegrationEditable = "No";
 	}
 	
 	ngOnInit() {
@@ -54,6 +57,7 @@ constructor(private _firebaseService: FirebaseService) {
 
 	addIntegration() {
 		this.integrations.push(new Integration(3, "Update Integration Name", 3));
+		this.makeIntegrationEditable = "Yes";
 	}
 	
 	addStep(){
@@ -69,6 +73,7 @@ constructor(private _firebaseService: FirebaseService) {
 						outputs: [{fieldId: 0, fieldLabel: ""}]
 						}]
 				});
+				this.makeStepEditable = "Yes";
 	}
 	
 	gotoDetail() {
