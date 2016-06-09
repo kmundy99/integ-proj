@@ -1,6 +1,7 @@
 	<h2>Integrations</h2>
 	<button (click)="saveAll()">Save All</button>
-	<ul class="integ" contenteditable = "makeIntegrationEditable='Yes'">
+	<ul class="integ" [contentEditable] = makeIntegrationEditable>
+		<button (click)="editInteg()">Edit</button>
 		<div>
 			<li *ngFor= "let integ of integrations" class="main"
 			[class.selected]="integration === selectedIntegration"
@@ -13,7 +14,8 @@
 
 	
 	<div *ngIf="selectedIntegration">
-	<ul class="integ" contenteditable = "makeStepEditable='Yes'">
+	<ul class="integ" [contentEditable] = makeStepEditable>
+		<button (click)="editStep()">Edit</button>
 		<li *ngFor= "let step of selectedIntegration.steps" class="main"
 		[class.selected]="step === selectedStep"
 		class="step" 
@@ -64,7 +66,12 @@
 									<select class="form-control" [(ngModel)]="input.sourceStepId">
 										<option *ngFor="let sourceStep of selectedIntegration.steps" [value]="sourceStep.name">{{sourceStep.name}}</option>
 									</select>
-					
+								<!--
+								<label>Source Field Id</label>
+									<select class="form-control" [(ngModel)]="input.sourceFieldId">
+										<option *ngFor="let sourceField of selectedIntegration.steps[indexOf(input.sourceStepId)].data[0].outputs" [value]="sourceField.fieldId">{{sourceField.fieldLabel}}</option>
+									</select>
+									-->
 									
 								<label>Override Label</label>
 								<input type="text" class="form-control element" [(ngModel)]="input.overrideLabel">
