@@ -15,7 +15,7 @@ h2 {
 	background-color: #eee;
 	border: solid black;
 	position: absolute;
-	margin-top: 5em;
+	margin-top: 10em;
 	list-style-type: none;
 }
 
@@ -76,7 +76,7 @@ button:hover {
   background-color: #cfd8dc;
 }
 .step {
-	width: 10em;
+	width: 15em;
 	float: left;
 }
 

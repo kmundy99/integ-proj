@@ -1,12 +1,11 @@
 	<h2>Integrations</h2>
 	<button (click)="saveAll()">Save All</button>
-	<ul class="integ" [contentEditable] = makeIntegrationEditable>
-		<button (click)="editInteg()">Edit</button>
+	<ul class="integ">
 		<div>
 			<li *ngFor= "let integ of integrations" class="main"
 			[class.selected]="integration === selectedIntegration"
 			(click)="onSelect(integ)">
-			<span class="badge"> {{integ.id}}</span>{{integ.name}}
+			<span class="badge">{{integ.id}}</span><input type="text" [(ngModel)]="integ.name">
 			</li>
 		</div>
 		<button (click) = "addIntegration()">+</button>
@@ -14,16 +13,15 @@
 
 	
 	<div *ngIf="selectedIntegration">
-	<ul class="integ" [contentEditable] = makeStepEditable>
-		<button (click)="editStep()">Edit</button>
+	<ul class="integ">
 		<li *ngFor= "let step of selectedIntegration.steps" class="main"
 		[class.selected]="step === selectedStep"
 		class="step" 
 		(click)="onSelects(step)"
 		>
-		<span class="badge" > {{step.id}}</span>{{step.name}}
+		<span class="badge" > {{step.id}}</span><input type="text" [(ngModel)]="step.name">
 		</li>
-		<button (click) = "addStep()">+</button>
+		<li class="main step"><button (click) = "addStep()">+</button></li>
 	</ul>
 
 	</div>
