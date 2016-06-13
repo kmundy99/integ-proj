@@ -20,6 +20,7 @@ readWrite = ['Read', 'Write', 'Both'];
 type = ['Lookup', 'Excel', 'Rest Api'];
 lookup = ['State abbrev to state', 'Taleo Prefix to Fusion Prefix', 'Taleo Person Type to Fusion Person Type'];
 saveData: string;
+selectedStepIndex: number;
 	
 constructor(private _firebaseService: FirebaseService) {
     this._firebaseService.getIntegration()
@@ -49,8 +50,10 @@ constructor(private _firebaseService: FirebaseService) {
 	console.log(this.selectedIntegration.steps);
 	}
 	
-	onSelects(step: Integration) {
+	onSelects(step: Integration, i: number) {
 	this.selectedStep= step;
+	console.log("Index of step is="+i);
+	this.selectedStepIndex = i;
 	}
 
 	addIntegration() {
@@ -72,6 +75,17 @@ constructor(private _firebaseService: FirebaseService) {
 				});	
 	}
 	
+	addInput() {
+	this.selectedIntegration.steps[this.selectedStepIndex].data[0].inputs.push( 
+	{sourceStepId: 0, sourceFieldId: 0, overrideLabel: ""}
+	);
+	}
+	
+	addOutput() {
+	this.selectedIntegration.steps[this.selectedStepIndex].data[0].outputs.push( 
+	{fieldId: 0, fieldLabel: ""}
+	);
+	}
 	
 	gotoDetail() {
 	

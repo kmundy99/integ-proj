@@ -14,10 +14,10 @@
 	
 	<div *ngIf="selectedIntegration">
 	<ul class="integ">
-		<li *ngFor= "let step of selectedIntegration.steps" class="main"
+		<li *ngFor= "let step of selectedIntegration.steps; let i=index" class="main"
 		[class.selected]="step === selectedStep"
 		class="step" 
-		(click)="onSelects(step)"
+		(click)="onSelects(step, i)"
 		>
 		<span class="badge" > {{step.id}}</span><input type="text" [(ngModel)]="step.name">
 		</li>
@@ -54,39 +54,42 @@
 							</select>
 					   </div>
 					   
-					  <div class="data-group">
-						<ul class="inputs">
-
-							<label>Source Field Id</label>
-							<label>Override Label</label> 
-							<li *ngFor="let input of data.inputs" >
-								<label>Source Step Id</label>
-									<select class="form-control" [(ngModel)]="input.sourceStepId">
-										<option *ngFor="let sourceStep of selectedIntegration.steps" [value]="sourceStep.name">{{sourceStep.name}}</option>
-									</select>
-								<!--
-								<label>Source Field Id</label>
-									<select class="form-control" [(ngModel)]="input.sourceFieldId">
-										<option *ngFor="let sourceField of selectedIntegration.steps[indexOf(input.sourceStepId)].data[0].outputs" [value]="sourceField.fieldId">{{sourceField.fieldLabel}}</option>
-									</select>
-									-->
-									
-								<label>Override Label</label>
-								<input type="text" class="form-control element" [(ngModel)]="input.overrideLabel">
-							</li>
-						</ul>
-					  </div>
+				<div class="data-group">
+				<table class="inputs">
+					  <h2> Inputs </h2>
+					  <tr>
+						  <th>Source Step Id</th> 
+						  <th>Source Field Id</th>
+						  <th>Override Label</th>
+					  </tr>
+						<tr *ngFor="let input of data.inputs" >
+							<td><select class="form-control" [(ngModel)]="input.sourceStepId">
+										<option *ngFor="let sourceStep of selectedIntegration.steps;  let i=index" [ngValue]="sourceStep.id">{{i}} {{sourceStep.name}}</option>
+								</select></td>
+							<td><select class="form-control" [(ngModel)]="input.sourceFieldId">
+										<option *ngFor="let sourceField of selectedIntegration.steps[0].data[0].outputs" [ngValue]="sourceField.fieldId">{{sourceField.fieldLabel}}</option>
+								</select></td>
+							<td><input type="text" class="form-control element" [(ngModel)]="input.overrideLabel"></td>
+						</tr>
+						<button (click) = "addInput()">+</button>
+				</table>
+			</div>
 					  
-					  	<div class="data-group">
-						<ul class="inputs">
-						
-							<label>Field Id</label> 
-							<label>Field Label</label>
-							<li *ngFor="let output of data.outputs" >
-								<input type="text" class="form-control element" [(ngModel)]="output.fieldId">
-								<input type="text" class="form-control element" [(ngModel)]="output.fieldLabel">
-							</li>
-						</ul>
+
+					  
+				<div class="data-group">
+				<table class="inputs">
+						<h2>Outputs</h2>
+						<tr>
+							<th>Field Id</th> 
+							<th>Field Label</th>
+						</tr>
+						<tr *ngFor="let output of data.outputs" >
+								<td><input type="text" class="form-control element" [(ngModel)]="output.fieldId"></td>
+								<td><input type="text" class="form-control element" [(ngModel)]="output.fieldLabel"></td>
+						</tr>
+						<button (click) = "addOutput()">+</button>			
+				</table>
 					  </div>
 
 					  <button type="submit" class="btn btn-default">Save</button>
