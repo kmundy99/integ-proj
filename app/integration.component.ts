@@ -21,6 +21,7 @@ type = ['Lookup', 'Excel', 'Rest Api'];
 lookup = ['State abbrev to state', 'Taleo Prefix to Fusion Prefix', 'Taleo Person Type to Fusion Person Type'];
 saveData: string;
 selectedStepIndex: number;
+
 	
 constructor(private _firebaseService: FirebaseService) {
     this._firebaseService.getIntegration()
@@ -60,6 +61,10 @@ constructor(private _firebaseService: FirebaseService) {
 		this.integrations.push(new Integration(3, "Update Integration Name", 3));
 	}
 	
+		removeIntegration(i: number) {
+		this.integrations.splice(i,1);
+	}
+	
 	addStep(){
 		this.selectedIntegration["steps"].push(
 				{id: 0, name: "Update Step", number: 0, 
@@ -75,16 +80,31 @@ constructor(private _firebaseService: FirebaseService) {
 				});	
 	}
 	
+	removeStep(i:number) {
+	this.selectedIntegration["steps"].splice(i, 1);
+	}
 	addInput() {
 	this.selectedIntegration.steps[this.selectedStepIndex].data[0].inputs.push( 
 	{sourceStepId: 0, sourceFieldId: 0, overrideLabel: ""}
 	);
 	}
 	
+	removeInput(i:number) {
+	this.selectedIntegration.steps[this.selectedStepIndex].data[0].inputs.splice(i, 1);
+	}
+	
 	addOutput() {
 	this.selectedIntegration.steps[this.selectedStepIndex].data[0].outputs.push( 
 	{fieldId: 0, fieldLabel: ""}
 	);
+	}
+	
+	removeOutput(i:number) {
+	this.selectedIntegration.steps[this.selectedStepIndex].data[0].outputs.splice(i,1);
+	}
+	
+	setIndex(i:number) {
+	console.log("inputStepIndex="+i);
 	}
 	
 	gotoDetail() {

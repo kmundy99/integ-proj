@@ -2,10 +2,11 @@
 	<button (click)="saveAll()">Save All</button>
 	<ul class="integ">
 		<div>
-			<li *ngFor= "let integ of integrations" class="main"
+			<li *ngFor= "let integ of integrations; let i=index" class="main"
 			[class.selected]="integration === selectedIntegration"
 			(click)="onSelect(integ)">
 			<span class="badge">{{integ.id}}</span><input type="text" [(ngModel)]="integ.name">
+			<button (click)="removeIntegration(i)">x</button>
 			</li>
 		</div>
 		<button (click) = "addIntegration()">+</button>
@@ -20,6 +21,7 @@
 		(click)="onSelects(step, i)"
 		>
 		<span class="badge" > {{step.id}}</span><input type="text" [(ngModel)]="step.name">
+		<button (click)="removeStep(i)">x</button>
 		</li>
 		<li class="main step"><button (click) = "addStep()">+</button></li>
 	</ul>
@@ -58,18 +60,23 @@
 				<table class="inputs">
 					  <h2> Inputs </h2>
 					  <tr>
-						  <th>Source Step Id</th> 
-						  <th>Source Field Id</th>
+						  <th>Source Step</th>
+						  <th>Source Field</th> 
 						  <th>Override Label</th>
 					  </tr>
-						<tr *ngFor="let input of data.inputs" >
-							<td><select class="form-control" [(ngModel)]="input.sourceStepId">
-										<option *ngFor="let sourceStep of selectedIntegration.steps;  let i=index" [ngValue]="sourceStep.id">{{i}} {{sourceStep.name}}</option>
-								</select></td>
-							<td><select class="form-control" [(ngModel)]="input.sourceFieldId">
-										<option *ngFor="let sourceField of selectedIntegration.steps[0].data[0].outputs" [ngValue]="sourceField.fieldId">{{sourceField.fieldLabel}}</option>
-								</select></td>
+						<tr *ngFor="let input of data.inputs; let i=index" >
+							<td><select class="form-control" [(ngModel)]="input.sourceStepId" (change)="setIndex(option.selectedIndex)" >
+									<option *ngFor="let sourceStep of selectedIntegration.steps;  let i=index" [ngValue]="sourceStep.id">{{i}} {{sourceStep.name}}
+									</option>
+								</select>
+							</td>
+							<td>
+								<select class="form-control" [(ngModel)]="input.sourceFieldId">
+									<option *ngFor="let sourceField of selectedIntegration.steps[0].data[0].outputs" [ngValue]="sourceField.fieldId">{{sourceField.fieldLabel}}</option>
+								</select>
+							</td>
 							<td><input type="text" class="form-control element" [(ngModel)]="input.overrideLabel"></td>
+							<button (click)="removeInput(i)">x</button>
 						</tr>
 						<button (click) = "addInput()">+</button>
 				</table>
@@ -84,15 +91,14 @@
 							<th>Field Id</th> 
 							<th>Field Label</th>
 						</tr>
-						<tr *ngFor="let output of data.outputs" >
+						<tr *ngFor="let output of data.outputs; let i=index" >
 								<td><input type="text" class="form-control element" [(ngModel)]="output.fieldId"></td>
 								<td><input type="text" class="form-control element" [(ngModel)]="output.fieldLabel"></td>
-						</tr>
+								<button (click)="removeOutput(i)">x</button>		
+		</tr>
 						<button (click) = "addOutput()">+</button>			
 				</table>
 					  </div>
-
-					  <button type="submit" class="btn btn-default">Save</button>
 					</form>
 			</div> 
 			<div  *ngIf="data.type=='Rest Api'" class="rcontainer">
@@ -113,7 +119,6 @@
 						<label>Password</label>
 						<input type="text" class="form-control" required [(ngModel)]="data.restApi.password">
 					  </div>
-					  <button type="submit" class="btn btn-default">Save</button>
 					</form>
 			</div>
 
@@ -147,7 +152,6 @@
 						<label>File Name</label>
 						<input type="text" class="form-control" required [(ngModel)]="data.excel.fileName">
 					  </div>					  
-					  <button type="submit" class="btn btn-default">Save</button>
 					</form>
 			</div>			
 		</li> 

@@ -71,6 +71,8 @@ button {
   border-radius: 4px;
   cursor: pointer;
   cursor: hand;
+  position: relative;
+  float: right;
 }
 button:hover {
   background-color: #cfd8dc;
