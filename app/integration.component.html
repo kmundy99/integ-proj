@@ -6,7 +6,7 @@
 			[class.selected]="integration === selectedIntegration"
 			(click)="onSelect(integ)">
 			<span class="badge">{{integ.id}}</span><input type="text" [(ngModel)]="integ.name">
-			<button (click)="removeIntegration(i)">x</button>
+			<button (click)="removeIntegration(i)" class="x">x</button>
 			</li>
 		</div>
 		<button (click) = "addIntegration()">+</button>
@@ -21,7 +21,7 @@
 		(click)="onSelects(step, i)"
 		>
 		<span class="badge" > {{step.id}}</span><input type="text" [(ngModel)]="step.name">
-		<button (click)="removeStep(i)">x</button>
+		<button (click)="removeStep(i)" class="x">x</button>
 		</li>
 		<li class="main step"><button (click) = "addStep()">+</button></li>
 	</ul>
@@ -76,7 +76,7 @@
 								</select>
 							</td>
 							<td><input type="text" class="form-control element" [(ngModel)]="input.overrideLabel"></td>
-							<button (click)="removeInput(i)">x</button>
+							<button (click)="removeInput(i)" class="x">x</button>
 						</tr>
 						<button (click) = "addInput()">+</button>
 				</table>
@@ -94,7 +94,7 @@
 						<tr *ngFor="let output of data.outputs; let i=index" >
 								<td><input type="text" class="form-control element" [(ngModel)]="output.fieldId"></td>
 								<td><input type="text" class="form-control element" [(ngModel)]="output.fieldLabel"></td>
-								<button (click)="removeOutput(i)">x</button>		
+								<button (click)="removeOutput(i)" class="x">x</button>		
 		</tr>
 						<button (click) = "addOutput()">+</button>			
 				</table>

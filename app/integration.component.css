@@ -71,6 +71,10 @@ button {
   border-radius: 4px;
   cursor: pointer;
   cursor: hand;
+
+}
+
+button.x {
   position: relative;
   float: right;
 }
