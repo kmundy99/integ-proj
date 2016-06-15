@@ -3,12 +3,13 @@ import { Integration} from './integration';
 import { IntegrationService } from './integration.service';
 import {NgIf} from '@angular/common';
 import {FirebaseService} from './firebase.service';
+import {GenericService} from './generic.service';
 
 @Component({
     selector: 'integration',
     templateUrl: 'app/integration.component.html',
 	styleUrls:  ['app/integration.component.css'],
-	providers: [FirebaseService]
+	providers: [FirebaseService, GenericService]
 })
 
 export class IntegrationComponent implements OnInit {
@@ -19,18 +20,26 @@ selectedStep: Integration;
 readWrite = ['Read', 'Write', 'Both'];
 type = ['Lookup', 'Excel', 'Rest Api'];
 lookup = ['State abbrev to state', 'Taleo Prefix to Fusion Prefix', 'Taleo Person Type to Fusion Person Type'];
+limitTo = [1, 3, 5, 10];
 saveData: string;
 selectedStepIndex: number;
+mydata: string;
+url: string;
 
 	
-constructor(private _firebaseService: FirebaseService) {
+constructor(private _genericService: GenericService, private _firebaseService: FirebaseService ) {
     this._firebaseService.getIntegration()
 		.subscribe(
 		integ => this.integrations = integ,
 		error => console.log(error)
 		);
 		
-		console.log(this.integrations);
+	this._genericService.get(this.url)
+		.subscribe(
+		data => this.mydata = data,
+		error => console.log(error)
+		);
+		
   }
 
 	saveAll() {
@@ -105,6 +114,9 @@ constructor(private _firebaseService: FirebaseService) {
 	
 	setIndex(i:number) {
 	console.log("inputStepIndex="+i);
+	}
+	
+	test(){
 	}
 	
 	gotoDetail() {

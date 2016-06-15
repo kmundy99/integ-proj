@@ -1,24 +1,22 @@
 import { Injectable } from '@angular/core';
-import { Integration} from './integration';
 import 'rxjs/Rx';
 import {Http, Headers} from '@angular/http';
 
 @Injectable()
-export class FirebaseService {
+export class GenericService {
 
 	constructor(private _http: Http) {
 	}
 
-	setIntegration(integ: [Integration]) {
-		const body = JSON.stringify(integ);
-		return this._http.put('https://integrations-3a5a9.firebaseio.com/integrations.json', body)
+	patch(jsonPayload: string, url: string) {
+		return this._http.patch(url, jsonPayload)
 			.map(response => response.json());
 
 		
 	}
 
-	getIntegration() {
-		return this._http.get('https://integrations-3a5a9.firebaseio.com/integrations.json')
+	get(url: string) {
+		return this._http.get(url)
 			.map(response => response.json());
 	}
 

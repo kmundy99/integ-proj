@@ -6,6 +6,7 @@
 			[class.selected]="integration === selectedIntegration"
 			(click)="onSelect(integ)">
 			<span class="badge">{{integ.id}}</span><input type="text" [(ngModel)]="integ.name">
+				<input type="number" [(ngModel)]="integ.limitTo">
 			<button (click)="removeIntegration(i)" class="x">x</button>
 			</li>
 		</div>
@@ -25,8 +26,8 @@
 		</li>
 		<li class="main step"><button (click) = "addStep()">+</button></li>
 	</ul>
-
 	</div>
+	
 	<div *ngIf="selectedStep">
 	<ul class="details">
 		<li *ngFor="let data of selectedStep.data" >
@@ -65,14 +66,14 @@
 						  <th>Override Label</th>
 					  </tr>
 						<tr *ngFor="let input of data.inputs; let i=index" >
-							<td><select class="form-control" [(ngModel)]="input.sourceStepId" (change)="setIndex(option.selectedIndex)" >
-									<option *ngFor="let sourceStep of selectedIntegration.steps;  let i=index" [ngValue]="sourceStep.id">{{i}} {{sourceStep.name}}
+							<td><select class="form-control" [ngModel]="input.sourceStepId" (ngModelChange)= "second.selectedIndex=0" #first>
+									<option *ngFor="let sourceStep of selectedIntegration.steps; let i=index" [attr.value]="sourceStep.id">{{i}} {{sourceStep.name}}
 									</option>
 								</select>
 							</td>
 							<td>
-								<select class="form-control" [(ngModel)]="input.sourceFieldId">
-									<option *ngFor="let sourceField of selectedIntegration.steps[0].data[0].outputs" [ngValue]="sourceField.fieldId">{{sourceField.fieldLabel}}</option>
+								<select class="form-control" [(ngModel)]="input.sourceFieldId" #second>
+									<option *ngFor="let sourceField of selectedIntegration.steps[first.selectedIndex].data[0].outputs" [attr.value]="sourceField.fieldId">{{sourceField.fieldLabel}}</option>
 								</select>
 							</td>
 							<td><input type="text" class="form-control element" [(ngModel)]="input.overrideLabel"></td>
@@ -155,6 +156,7 @@
 					</form>
 			</div>			
 		</li> 
+		<button (click)=test()>Test</button>
 	</ul> 
 	</div>
 	
