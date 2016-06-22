@@ -23,8 +23,10 @@ lookup = ['State abbrev to state', 'Taleo Prefix to Fusion Prefix', 'Taleo Perso
 limitTo = [1, 3, 5, 10];
 saveData: string;
 selectedStepIndex: number;
-mydata: string;
+stepOutputs: [{fieldId: number; fieldLabel: string;}];
 url: string;
+username: string;
+password: string;
 
 	
 constructor(private _genericService: GenericService, private _firebaseService: FirebaseService ) {
@@ -34,11 +36,6 @@ constructor(private _genericService: GenericService, private _firebaseService: F
 		error => console.log(error)
 		);
 		
-	this._genericService.get(this.url)
-		.subscribe(
-		data => this.mydata = data,
-		error => console.log(error)
-		);
 		
   }
 
@@ -99,24 +96,39 @@ constructor(private _genericService: GenericService, private _firebaseService: F
 	}
 	
 	removeInput(i:number) {
-	this.selectedIntegration.steps[this.selectedStepIndex].data[0].inputs.splice(i, 1);
+		this.selectedIntegration.steps[this.selectedStepIndex].data[0].inputs.splice(i, 1);
 	}
 	
 	addOutput() {
-	this.selectedIntegration.steps[this.selectedStepIndex].data[0].outputs.push( 
-	{fieldId: 0, fieldLabel: ""}
+		this.selectedIntegration.steps[this.selectedStepIndex].data[0].outputs.push( 
+		{fieldId: 0, fieldLabel: ""}
 	);
 	}
 	
 	removeOutput(i:number) {
-	this.selectedIntegration.steps[this.selectedStepIndex].data[0].outputs.splice(i,1);
+		this.selectedIntegration.steps[this.selectedStepIndex].data[0].outputs.splice(i,1);
 	}
 	
 	setIndex(i:number) {
-	console.log("inputStepIndex="+i);
+		console.log("inputStepIndex="+i);
 	}
 	
 	test(){
+		this.url = this.selectedIntegration.steps[this.selectedStepIndex].data[0].restApi.url;
+		this.username = this.selectedIntegration.steps[this.selectedStepIndex].data[0].restApi.username;
+		this.password = this.selectedIntegration.steps[this.selectedStepIndex].data[0].restApi.password;
+		
+		this._genericService.authenticate(this.username, this.password);
+		
+		this._genericService.get(this.url)
+			.subscribe(
+			data => this.stepOutputs = data,
+			error => console.log(error)
+			);
+			
+			console.log(this.stepOutputs);
+			this.selectedIntegration.steps[this.selectedStepIndex].data[0].outputs = this.stepOutputs;
+
 	}
 	
 	gotoDetail() {
